@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Karim Sehil — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2b30; --soft:#5b6f76; --faint:#8aa0a6; --line:#d7e0e1;
+    --teal:#1f8a82; --tealdark:#176b64;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Inter','Helvetica Neue',Arial,sans-serif;
+    --mono:'JetBrains Mono',Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  @page{ size:A4; margin:0 }
+  html,body{background:#fff}
+  body{
+    font-family:var(--sans); color:var(--ink); font-size:10.4px; line-height:1.45;
+    padding:14mm 14mm; width:210mm; -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  a{color:var(--teal); text-decoration:none}
+
+  /* ---------- header ---------- */
+  .head{display:flex; justify-content:space-between; align-items:flex-start; gap:20px}
+  .name{font-family:var(--serif); font-weight:400; font-size:31px; letter-spacing:-.01em; line-height:1; color:var(--ink)}
+  .name em{font-style:italic; color:var(--teal)}
+  .role{font-weight:700; font-size:11.5px; margin-top:7px; letter-spacing:.01em}
+  .avail{font-family:var(--mono); font-size:8.6px; letter-spacing:.12em; color:var(--faint); margin-top:5px; text-transform:uppercase}
+  .contacts{font-size:9.4px; text-align:right; line-height:1.7; min-width:175px}
+  .contacts .row{white-space:nowrap}
+  .contacts .lab{font-family:var(--mono); font-size:8px; color:var(--teal); letter-spacing:.1em; text-transform:uppercase; margin-right:6px}
+  .contacts a,.contacts span.val{color:var(--ink)}
+
+  .rule{height:1px; background:var(--line); margin:12px 0 11px}
+
+  .summary{font-size:10px; line-height:1.55; color:#33444a}
+  .summary b{color:var(--ink); font-weight:600}
+
+  /* ---------- section ---------- */
+  .sec{display:flex; align-items:center; gap:10px; margin:15px 0 8px}
+  .sec h2{font-family:var(--mono); font-weight:500; font-size:9px; letter-spacing:.22em; text-transform:uppercase; color:var(--teal)}
+  .sec .ln{flex:1; height:1px; background:var(--line)}
+
+  .item-head{display:flex; justify-content:space-between; align-items:baseline; gap:12px}
+  .item-head .t{font-size:10.8px; font-weight:700; color:var(--ink)}
+  .item-head .t .desc{font-weight:400; color:var(--soft)}
+  .item-head .date{font-family:var(--mono); font-size:8.6px; color:var(--faint); letter-spacing:.04em; white-space:nowrap}
+  .sub{font-size:9px; color:var(--soft); margin-top:1px}
+
+  .tags{display:flex; flex-wrap:wrap; gap:4px; margin:5px 0 5px}
+  .tag{font-family:var(--mono); font-size:7.8px; letter-spacing:.02em; color:var(--tealdark);
+    border:1px solid var(--line); border-radius:4px; padding:1.5px 6px; background:#f3f8f7}
+
+  ul{list-style:none; margin:3px 0 0}
+  li{position:relative; padding-left:11px; margin:2.8px 0; font-size:9.7px; line-height:1.44; color:#33444a}
+  li::before{content:"–"; position:absolute; left:0; color:var(--teal)}
+  li b{color:var(--ink); font-weight:600}
+  code{font-family:var(--mono); font-size:8.8px; background:#f1f6f5; border-radius:3px; padding:0 3px; color:var(--tealdark)}
+
+  .blockgap{margin-top:8px}
+
+  /* stack rows */
+  .kv{display:flex; gap:12px; margin:4px 0}
+  .kv .k{font-family:var(--mono); font-size:8.2px; letter-spacing:.06em; text-transform:uppercase; color:var(--faint); width:104px; flex:none; padding-top:1px}
+  .kv .v{font-size:9.6px; color:#33444a}
+  .kv .v b{color:var(--ink); font-weight:600}
+
+  /* education grid */
+  .edu{display:grid; grid-template-columns:1fr 1fr; gap:6px 26px}
+  .edu .e .t{font-size:9.8px; font-weight:700}
+  .edu .e .d{font-family:var(--mono); font-size:8.2px; color:var(--faint); float:right}
+  .edu .e .s{font-size:8.7px; color:var(--soft)}
+
+  .langs{font-size:9.7px; color:#33444a}
+  .langs b{color:var(--ink); font-weight:600}
+
+  /* screen only: show the sheet on a desk. Print output is untouched. */
+  @media screen{
+    html{background:#e6ecec}
+    body{margin:28px auto; min-height:297mm; box-shadow:0 2px 28px rgba(28,43,48,.14)}
+  }
+</style>
+</head>
+<body>
+
+  <div class="head">
+    <div>
+      <div class="name">Karim <em>Sehil</em></div>
+      <div class="role">Application Security Analyst · Full-Stack Developer</div>
+      <div class="avail">Remote · GMT+1 · EN B2</div>
+    </div>
+    <div class="contacts">
+      <div class="row"><span class="lab">mail</span><a href="mailto:karim1sehil@gmail.com">karim1sehil@gmail.com</a></div>
+      <div class="row" hidden><span class="lab">tel</span><span class="val" data-private="tel"></span></div>
+      <div class="row"><span class="lab">in</span><a href="https://www.linkedin.com/in/karim-sehil">linkedin.com/in/karim-sehil</a></div>
+      <div class="row"><span class="lab">git</span><a href="https://github.com/KarimS78">github.com/KarimS78</a></div>
+      <div class="row"><span class="lab">web</span><a href="https://karimsehil.com">karimsehil.com</a></div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="summary">
+    <b>Application Security Analyst</b> and self-taught <b>full-stack developer</b>. I work in application security — code review, vulnerability triage, secure development practices — and I build <b>production-ready web applications</b> from concept to deployment. Curious by nature and driven to continuously learn, I enjoy building intuitive, secure and reliable software while delivering the best possible experience for end users.
+  </div>
+
+  <div class="sec"><h2>Experience</h2><div class="ln"></div></div>
+
+  <div class="item-head">
+    <div class="t">Junior Application Security Analyst <span class="desc">— <span data-private="appsec_employer">remote</span></span></div>
+    <div class="date">Aug 2026 — Present</div>
+  </div>
+  <ul>
+    <li>Application security day to day: <b>code review</b>, <b>vulnerability triage</b> and <b>secure development practices</b>.</li>
+    <li>Reading code for what can go wrong, not only for what it should do — and bringing that back into everything I build.</li>
+  </ul>
+
+  <div class="item-head blockgap">
+    <div class="t">Laboratory Technician <span class="desc">— <span data-private="lab_employer">public wastewater utility</span></span></div>
+    <div class="date">2022 — 2026</div>
+  </div>
+  <ul>
+    <li><b>Field sampling and instrumentation</b> across wastewater treatment sites: equipment calibration, field measurements and traceable data collection.</li>
+    <li>Worked under strict <b>QA/QC procedures</b> in a regulated environment; identified operational inefficiencies and turned them into <b>Aquarys</b>.</li>
+  </ul>
+
+  <div class="item-head blockgap">
+    <div class="t">Founder &amp; Freelance Web Developer <span class="desc">— Lumea</span></div>
+    <div class="date">2026 — Present</div>
+  </div>
+  <ul>
+    <li>My own web studio: websites and web apps for local businesses, from client requirements to production deployment.</li>
+  </ul>
+
+  <div class="sec"><h2>Projects</h2><div class="ln"></div></div>
+
+  <div class="item-head">
+    <div class="t">Aquarys <span class="desc">— laboratory operations platform · <a href="https://aquarys.io">aquarys.io</a></span></div>
+    <div class="date">2026 — Present</div>
+  </div>
+  <div class="tags">
+    <span class="tag">Next.js (App Router)</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL + RLS</span><span class="tag">RBAC</span><span class="tag">PWA</span><span class="tag">Vercel</span><span class="tag">Cloudflare</span>
+  </div>
+  <ul>
+    <li><b>Designed, architected and built solo</b> a production-ready laboratory operations platform (<i>currently being evaluated for internal adoption</i>).</li>
+    <li>Digitized sample collection workflows: rounds planned and tracked, <b>offline field entry</b> on an installable PWA, a dashboard and push notifications per role.</li>
+    <li>PostgreSQL with <b>Row-Level Security and role-based access</b> across multiple user roles; data hosted in France.</li>
+  </ul>
+
+  <div class="item-head blockgap">
+    <div class="t">SideQuest AI <span class="desc">— picks which game to launch tonight · <a href="https://sidequest-eta-inky.vercel.app">live demo</a></span></div>
+    <div class="date">2026</div>
+  </div>
+  <ul>
+    <li>Reads a Steam library, your free time and your mood; an <b>explainable local scoring engine</b> where every pick shows what it scored on. Bilingual, installable PWA.</li>
+  </ul>
+
+  <div class="item-head blockgap">
+    <div class="t">Classifile <span class="desc">— desktop app that sorts documents on its own</span></div>
+    <div class="date">2026</div>
+  </div>
+  <ul>
+    <li><b>Tauri + Rust</b> app built for an accounting client on Windows. 100% local: OCR on scans, and a keyword + naive-Bayes engine that learns from every correction (69% → 98% on my test corpus). Never deletes or overwrites a file.</li>
+  </ul>
+
+  <div class="item-head blockgap">
+    <div class="t">Avelyo <span class="desc">— quotes &amp; invoices SaaS for tradespeople and small businesses</span></div>
+    <div class="date">2026</div>
+  </div>
+  <ul>
+    <li><b>Multi-tenant</b>: isolated organisations with server-side anti-IDOR checks, deny-by-default roles and a full audit log. Produces <b>Factur-X</b> e-invoices (PDF/A-3 + EN 16931 XML) for France's e-invoicing reform.</li>
+  </ul>
+
+  <div class="item-head blockgap">
+    <div class="t">Life OS <span class="desc">— personal planning PWA</span></div>
+    <div class="date">2026</div>
+  </div>
+  <ul>
+    <li><b>Offline-first</b>, synced across devices by a field-by-field merge, with Web Push notifications and iPhone Shortcuts bridges; 70+ automated tests.</li>
+  </ul>
+
+  <div class="sec"><h2>Skills</h2><div class="ln"></div></div>
+  <div class="kv">
+    <div class="k">Security</div>
+    <div class="v">OWASP Top 10 · Secure Coding Principles · Code Review · Vulnerability Triage · DevSecOps Fundamentals</div>
+  </div>
+  <div class="kv">
+    <div class="k">Frontend</div>
+    <div class="v">React · Next.js (App Router) · TypeScript · Tailwind CSS · PWA (offline, Web Push) · Tauri (desktop)</div>
+  </div>
+  <div class="kv">
+    <div class="k">Backend / Data</div>
+    <div class="v">Node.js · REST APIs · Authentication · RBAC · SQL · PostgreSQL · Row-Level Security · Drizzle ORM</div>
+  </div>
+  <div class="kv">
+    <div class="k">Deploy / Test</div>
+    <div class="v">Git · GitHub · CI/CD · Vercel · Netlify · Cloudflare · Vitest · Playwright</div>
+  </div>
+  <div class="kv">
+    <div class="k">AI</div>
+    <div class="v">AI-assisted development (Claude Code, Codex) · Prompt engineering</div>
+  </div>
+
+  <div class="sec"><h2>Education</h2><div class="ln"></div></div>
+  <div class="item-head">
+    <div class="t">Energy &amp; Environment Management <span class="desc">— professional bachelor's programme (attended) · Université Paris Nanterre</span></div>
+    <div class="date">2020 — 2021</div>
+  </div>
+  <div class="item-head" style="margin-top:4px">
+    <div class="t">Chemical &amp; Process Engineering <span class="desc">— University Diploma of Technology (DUT) · Paris-Saclay University</span></div>
+    <div class="date">2018 — 2020</div>
+  </div>
+  <div class="item-head" style="margin-top:4px">
+    <div class="t">Maths, CS, Physics &amp; Engineering <span class="desc">— bachelor's programme (attended) · CY Cergy Paris University</span></div>
+    <div class="date">2016 — 2018</div>
+  </div>
+
+  <div class="sec"><h2>Languages</h2><div class="ln"></div></div>
+  <div class="langs"><b>French &amp; Arabic</b> (native) · <b>English</b> (B2, professional) · Spanish (basics)</div>
+
+  <!-- Private details (phone, employer names) live in private.js, which is git-ignored.
+       Without it the page renders the public version. See private.example.js. -->
+  <script src="private.js"></script>
+  <script>
+    (function(){
+      var p = /[?&]public\b/.test(location.search) ? {} : (window.CV_PRIVATE || {});
+      document.querySelectorAll('[data-private]').forEach(function(el){
+        var v = p[el.getAttribute('data-private')];
+        if(!v) return;
+        el.textContent = v;
+        var row = el.closest('[hidden]');
+        if(row) row.hidden = false;
+      });
+    })();
+  </script>
+</body>
+</html>
