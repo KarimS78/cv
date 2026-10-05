@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Karim Sehil — CV</title>
+<meta name="description" content="CV of Karim Sehil — Application Security Analyst · Full-Stack Developer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -222,18 +223,25 @@
   <div class="langs"><b>French &amp; Arabic</b> (native) · <b>English</b> (B2, professional) · Spanish (basics)</div>
 
   <!-- Private details (phone, employer names) live in private.js, which is git-ignored.
-       Without it the page renders the public version. See private.example.js. -->
-  <script src="private.js"></script>
+       It is only looked for on a local copy; anywhere else, and whenever it is
+       missing, the page renders the public version. See private.example.js. -->
   <script>
     (function(){
-      var p = /[?&]public\b/.test(location.search) ? {} : (window.CV_PRIVATE || {});
-      document.querySelectorAll('[data-private]').forEach(function(el){
-        var v = p[el.getAttribute('data-private')];
-        if(!v) return;
-        el.textContent = v;
-        var row = el.closest('[hidden]');
-        if(row) row.hidden = false;
-      });
+      function apply(p){
+        document.querySelectorAll('[data-private]').forEach(function(el){
+          var v = p[el.getAttribute('data-private')];
+          if(!v) return;
+          el.textContent = v;
+          var row = el.closest('[hidden]');
+          if(row) row.hidden = false;
+        });
+      }
+      var local = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+      if(!local || /[?&]public\b/.test(location.search)) return;
+      var sc = document.createElement('script');
+      sc.src = 'private.js';
+      sc.onload = function(){ apply(window.CV_PRIVATE || {}); };
+      document.head.appendChild(sc);
     })();
   </script>
 </body>

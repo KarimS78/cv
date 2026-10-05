@@ -3,6 +3,8 @@
 My CV as **one HTML file**. No template engine, no build step to read it:
 open `index.html` in a browser, print it, and you get a one-page A4 PDF.
 
+**Read it online:** https://karims78.github.io/cv/
+
 <p align="center">
   <img src="preview.png" alt="Preview of the CV" width="520">
 </p>
@@ -19,8 +21,9 @@ open `index.html` in a browser, print it, and you get a one-page A4 PDF.
 ## Private details stay out of the repo
 
 My phone number and employer names are not in `index.html`. They live in a
-git-ignored `private.js`; when that file is present the page fills them in,
-otherwise it renders this public version.
+git-ignored `private.js`; on a local copy where that file is present the page
+fills them in, otherwise (and always on the hosted page) it renders this public
+version.
 
 ```bash
 cp private.example.js private.js   # then edit it
@@ -43,7 +46,7 @@ binary). PDFs are git-ignored.
 
 | File | What it is |
 |---|---|
-| `index.html` | The CV: markup, print CSS, and the 15-line script that applies private details |
+| `index.html` | The CV: markup, print CSS, and the short script that applies private details |
 | `private.example.js` | Template for the git-ignored `private.js` |
 | `build.sh` | PDF and preview generation |
 | `preview.png` | The public version, as rendered by `./build.sh public` |
